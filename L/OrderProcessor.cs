@@ -16,11 +16,18 @@ namespace solid.L
             return _refundService.CalculateRefundAmount(percentage);
         }
 
-
+        /*
+         This class doesn’t care which refund service is injected.
+        It only cares that the service respects the contract of IRefundableService.
+         */
         /*
          * 
-         Client side Code
-         IRefundableService service;
+        LSP in Action (Valid Substitution)
+
+
+        //Client side Code
+
+        IRefundableService service;
 
         // Regular refund
         service = new PercentageRefundService();
@@ -29,7 +36,7 @@ namespace solid.L
         // Special holiday refund
         service = new SpecialHolidayRefundService();
         Console.WriteLine(service.CalculateRefundAmount(20)); // 400
-        public decimal ProcessRefund(decimal amount) {
+
         */
     }
 }
